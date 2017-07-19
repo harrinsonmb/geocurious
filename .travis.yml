@@ -25,3 +25,4 @@ install:
 script:
 - npm run build
 - karma start karma.conf.js --single-run
+- npm run e2e
