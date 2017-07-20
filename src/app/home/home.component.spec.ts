@@ -1,6 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
+import {HomeComponent} from './home.component';
+import {DebugElement} from '@angular/core';
+import {By} from '@angular/platform-browser';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,9 +11,10 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      imports: [RouterTestingModule],
+      declarations: [HomeComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +25,17 @@ describe('HomeComponent', () => {
 
   it('should be created', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should contains two anchors', () => {
+    const de: DebugElement [] = fixture.debugElement.queryAll(By.css('a'));
+    expect(de.map(x => x.nativeElement).length).toBe(2);
+  });
+
+  it('should contain a valid anchor that redirects to mode selector page', () => {
+    const de: DebugElement = fixture.debugElement.query(By.css('a[href="/gamemode"]'));
+    expect(de).not.toBeNull();
+    const ne = de.nativeElement;
+    expect(ne.innerText || ne.textContent).not.toBe('');
   });
 });
