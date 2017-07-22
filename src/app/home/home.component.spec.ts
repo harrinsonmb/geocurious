@@ -32,8 +32,15 @@ describe('HomeComponent', () => {
     expect(de.map(x => x.nativeElement).length).toBe(2);
   });
 
-  it('should contain a valid anchor that redirects to mode selector page', () => {
+  it('should contains a valid anchor for going to gamemode view', () => {
     const de: DebugElement = fixture.debugElement.query(By.css('a[href="/gamemode"]'));
+    expect(de).not.toBeNull();
+    const ne = de.nativeElement;
+    expect(ne.innerText || ne.textContent).not.toBe('');
+  });
+
+  it('should contains a valid anchor for going to score view', () => {
+    const de: DebugElement = fixture.debugElement.query(By.css('a[href="/score"]'));
     expect(de).not.toBeNull();
     const ne = de.nativeElement;
     expect(ne.innerText || ne.textContent).not.toBe('');
