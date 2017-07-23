@@ -1,5 +1,5 @@
 import { GeocuriousPage } from './app.po';
-import { browser, by, element} from 'protractor';
+import { browser } from 'protractor';
 
 describe('gamemode', () => {
   let page: GeocuriousPage;
