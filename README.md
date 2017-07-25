@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/harrinsonmb/geocurious.svg?branch=master)](https://travis-ci.org/harrinsonmb/geocurious) [![codecov](https://codecov.io/gh/harrinsonmb/geocurious-test/branch/master/graph/badge.svg?token=jQuQgJC92g)](https://codecov.io/gh/harrinsonmb/geocurious-test)
+[![Build Status](https://travis-ci.org/harrinsonmb/geocurious.svg?branch=master)](https://travis-ci.org/harrinsonmb/geocurious) [![codecov](https://codecov.io/gh/harrinsonmb/geocurious/branch/master/graph/badge.svg)](https://codecov.io/gh/harrinsonmb/geocurious)
