@@ -20,10 +20,10 @@ before_install:
 install:
 - npm install -g angular-cli
 - npm install -g karma
+- npm install -g codecov
 - npm install
 
 script:
-- npm run build
-- karma start karma.conf.js --single-run
 - npm run e2e
-- karma start karma.conf.js --single-run --code-coverage
+- npm run ng test -- --single-run --code-coverage
+- codecov
