@@ -2,27 +2,27 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - '6.9'
-
+- '6.9'
 addons:
+  browserstack:
+    username: harrinsonmosquer1
+    access_key:
+      secure: "DDPSxbxw5A4LgZVHDas0ovfCErhAJBuyXGi/hsFYOHz3AMY6Q/Xx4onOKusKpIUzU5fSAxUU/ib6ccszv3CD8r8jLwpZIL6kzAvWgHGGI9VocJBI5+O/WQd7YMb0/pRmBrPGjjqRHSOM26rBrs5e8XBKvtUBJxcwe/iZcUzMHpIynJ3CnQzdwSAUXXKBbUzzx84UdVmTyEF2khXLe2mQ9oKRCvv9HGIgKFJJKFV62779ydKsSdx07d4p9vYby/M61v2JQz+ALgdLEy5W+Pk+0Q/1lHjdj3jgbvaohaXT0wzNiqT/mhVsDIBUidNTHnwSGPphygsrOkJy5oy1mODr7NU0xOD/R5aU8l86B1EChWW8keN538xtVKCYLRdpe/D4wDEyTfbPwJcBjMKdPy/8FcwZ6MeoCpffqNd0i2k2catFoXjarbjOIZ7qCqCFJ8sV7MoHdvJJNWjsOZCHyeRyGs7ki7CzZiftc6PhQQaMzcwxa6hgM8s7O7RFYZsqCVIncVOGUg6i+IPx/190kEfO+uO/6ygokEBaXF4RdpnUFf+5F4A5PDnjARisGqO4ssOPAkKoTxwtwCSETHDRm1y9cpPd8jC6Z01Bx0uJoPkNhe1twEcCm5akTP6rsA0dDlRH+B0R0qFuypeaJwdzyu93d/pJ/YVMn67Hq6TpIdnJgmU="
 apt:
   sources:
-    - google-chrome
+  - google-chrome
   packages:
-    - google-chrome-stable
-    - google-chrome-beta
-
+  - google-chrome-stable
+  - google-chrome-beta
 before_install:
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-
+- export CHROME_BIN=chromium-browser
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 install:
 - npm install -g angular-cli
 - npm install -g karma
 - npm install -g codecov
 - npm install
-
 script:
 - npm run e2e
 - npm run ng test -- --single-run --code-coverage

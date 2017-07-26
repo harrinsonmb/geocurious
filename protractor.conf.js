@@ -8,16 +8,19 @@ exports.config = {
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
+  'seleniumAddress': 'http://hub-cloud.browserstack.com/wd/hub',
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'chrome',
+    'browserstack.local': 'true',
+    'browserstack.localIdentifier': process.env.BROWSERSTACK_LOCAL_IDENTIFIER
   },
-  directConnect: true,
+  directConnect: false,
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
-    print: function() {}
+    //print: function() {}
   },
   onPrepare() {
     require('ts-node').register({
