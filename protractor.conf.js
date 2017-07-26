@@ -8,13 +8,13 @@ exports.config = {
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
-  'seleniumAddress': 'http://hub-cloud.browserstack.com/wd/hub',
   capabilities: {
     'browserName': 'chrome',
     'browserstack.local': 'true',
-    'browserstack.localIdentifier': process.env.BROWSERSTACK_LOCAL_IDENTIFIER
+    'browserstack.localIdentifier': process.env.BROWSERSTACK_LOCAL_IDENTIFIER,
+    'browserstack.user': process.env.BROWSERSTACK_USER
   },
-  directConnect: false,
+  directConnect: true,
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {
