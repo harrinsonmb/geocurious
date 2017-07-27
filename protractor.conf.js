@@ -5,16 +5,16 @@ const { SpecReporter } = require('jasmine-spec-reporter');
 
 exports.config = {
   allScriptsTimeout: 11000,
+  'seleniumAddress': 'http://hub-cloud.browserstack.com/wd/hub',
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome',
-    'browserstack.local': 'true',
-    'browserstack.localIdentifier': process.env.BROWSERSTACK_LOCAL_IDENTIFIER,
-    'browserstack.user': process.env.BROWSERSTACK_USER
+    'browserstack.user': '***',
+    'browserstack.key': '***',
+    'browserName': 'chrome'
   },
-  directConnect: true,
+  directConnect: false,
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {
